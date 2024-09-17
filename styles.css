@@ -1,109 +1,37 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-    background-color: white;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
 }
 
-.controls {
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#matrix-container {
+    position: relative;
 }
 
-.controls label, .controls input, .controls button {
+canvas {
+    border: 1px solid #fff;
+    background-color: #111;
+}
+
+input, button {
     margin: 5px;
 }
 
-.matrix-container {
-    position: relative;
-    
-
+label {
+    margin-right: 5px;
 }
 
-.matrix {
-    position: relative;
-    
-    background-color: #111;
-    border: 1px solid #333;
-    overflow: hidden;
-}
-
-.scrolling-text {
-    white-space: nowrap;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    color: red; /* Default text color */
-    z-index: 2;
-    animation: scroll 10s linear infinite;
-}
-
-@keyframes scroll {
-    from  {
-        transform: translateX(100%);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-.color-scroll {
-    animation: colorScroll 5s linear infinite;
-}
-
-@keyframes colorScroll {
-    0% { color: #0f0; }
-    50% { color: #f00; }
-    100% { color: #0f0; }
-}
-
-.falling-pixels {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background: rgba(0, 255, 0, 0.5);
-    animation: fallingPixels 2s linear infinite;
-    z-index: 1;
-}
-
-@keyframes fallingPixels {
-    0% { top: -100%; }
-    100% { top: 100%; }
-}
-
-.matrix-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-}
-
-.pixel-drawing {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: grid;
-    grid-template-columns: repeat(30, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    gap: 1px;
-    z-index: 1;
-}
-
-.pixel {
-    background-color: #333;
-    border: 1px solid #000;
-    cursor: pointer;
-}
-
-.pixel.active {
-    background-color: #0f0; /* Color for active pixel */
-}
+button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid black;
+    cursor: pointer;
+  }
